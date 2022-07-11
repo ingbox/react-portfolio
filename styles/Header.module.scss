@@ -1,0 +1,326 @@
+@import "./mixins";
+@import "./variables";
+
+
+@include mobile {
+    .header_style {
+        width: 99vw;
+        height: 10vh;
+        display: flex;
+        position: fixed;
+        margin: 0 auto; // 가운데 정렬
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 3em;
+        background: #4D54FF;
+        // transition: ease all .3s;
+      }
+}
+
+
+@include tablet {
+    .header_style {
+        width: 10vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #4D54FF;
+        transition: .3s;
+        z-index: -2;
+    }
+}
+
+
+@include desktop {
+    .header_layout {
+        width: 11vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #4D54FF;
+        z-index: -2;
+    }
+
+    .header_style {
+        width: 11vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .container {
+        position: relative;
+        width: 11vw;
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+         // indicator Home
+        &:nth-child(1):hover ~.indicator{
+            transform: translateY(calc(0vh));
+        }
+        &:nth-child(2):hover ~.indicator{
+            transform: translateY(calc(23.5vh));
+        }
+        &:nth-child(3):hover  ~.indicator{
+            transform: translateY(calc(47.5vh));
+        }
+        &:nth-child(4):hover  ~.indicator{
+            transform: translateY(calc(71.7vh));
+        }
+
+         // indicator Project
+        &:nth-child(1):hover ~.indicator_Project{
+            transform: translateY(calc(-23.5vh));
+        }
+        &:nth-child(2):hover ~.indicator_Project{
+            transform: translateY(calc(0));
+        }
+        &:nth-child(3):hover  ~.indicator_Project{
+            transform: translateY(calc(24vh));
+        }
+        &:nth-child(4):hover  ~.indicator_Project{
+            transform: translateY(calc(48.2vh));
+        }
+
+        // indicator Goal
+        &:nth-child(1):hover ~.indicator_Goal{
+            transform: translateY(calc(-47.5vh));
+        }
+        &:nth-child(2):hover ~.indicator_Goal{
+            transform: translateY(calc(-24vh));
+        }
+        &:nth-child(3):hover  ~.indicator_Goal{
+            transform: translateY(calc(0));
+        }
+        &:nth-child(4):hover  ~.indicator_Goal{
+            transform: translateY(calc(24.2vh));
+        }
+
+        // indicator Contact 
+        &:nth-child(1):hover ~.indicator_Contact{
+            transform: translateY(calc(-71.7vh));
+        }
+        &:nth-child(2):hover ~.indicator_Contact{
+            transform: translateY(calc(-48.2vh));
+        }
+        &:nth-child(3):hover  ~.indicator_Contact{
+            transform: translateY(calc(-24.2vh));
+        }
+        &:nth-child(4):hover  ~.indicator_Project{
+            transform: translateY(calc(0));
+        }
+
+        // Home이 클릭되었을 때 동작할 폰트 동작
+        @for $i from 1 through 4 {
+        &:nth-child(#{$i}):hover .link{    
+            transform: translateX(5vw) scale(0.5);
+            ~ span {
+                opacity: 1;
+                transform: translateX(-10px);
+            }
+        }
+    }
+           
+        // 이미지
+        & .link {
+            position:relative;
+            display: block;
+            width: 17vh;
+            height: 17vh;
+            padding: 0vh 4.7vh 0vh 0vh;
+            color: white;
+            transition: 0.5s;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        // 글자
+        & span {
+            position: absolute;
+            opacity: 0;
+            font-family: 'Black Han Sans';
+            // font-weight: 400; //bold
+            font-size: 1.5em;
+            transition: 0.5s;
+            transform: translateX(-20px);
+        }
+    }
+}
+
+
+.indicator {
+    --color: rgba(255, 255, 255, 1);
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-color: #29fd53;
+    transition: transform 0.4s;
+    
+    left: 7.5vw;
+    top: 9.3vh;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 0.5vw solid #fff;
+    z-index: unset;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+        
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        bottom: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-top-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+    }
+}
+
+.indicator_Project {
+    --color: rgba(255, 255, 255, 1);
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-color: #29fd53;
+    transition: transform 0.4s;
+    
+    left: 7.5vw;
+    top: 32.8vh;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 0.5vw solid #fff;
+    z-index: unset;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+        
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        bottom: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-top-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+    }
+}
+
+.indicator_Goal {
+    --color: rgba(255, 255, 255, 1);
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-color: #29fd53;
+    transition: transform 0.4s;
+    
+    left: 7.5vw;
+    top: 56.8vh;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 0.5vw solid #fff;
+    z-index: unset;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+        
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        bottom: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-top-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+    }
+}
+
+.indicator_Contact {
+    --color: rgba(255, 255, 255, 1);
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-color: #29fd53;
+    transition: transform 0.4s;
+    
+    left: 7.5vw;
+    top: 81vh;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 0.5vw solid #fff;
+    z-index: unset;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 50%;
+        top: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+        
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 50%;
+        bottom: -3.7vh;
+        width: 2vw;
+        height: 3vh;
+        background: transparent;
+        border-top-right-radius: 1.5vh;
+        box-shadow: 15px 0px 0px -1px var(--color);
+    }
+}

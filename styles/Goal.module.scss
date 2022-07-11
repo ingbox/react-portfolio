@@ -1,0 +1,52 @@
+.background {
+    position: absolute;
+    margin: 0 0 0 10vw;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: white;
+}
+
+.indicator {
+    top: calc(20vh);
+    z-index: unset;
+}
+
+@import "./variables";
+
+.circle_container {
+    width: $dot-diameter;
+    height: $dot-diameter;
+    transform: rotate(-225deg);
+    stroke: white;
+    stroke-dasharray: 75 100;
+    stroke-linecap: round;
+  }
+
+.circle_container__background {
+    fill: none;
+    stroke: $default-color;
+    stroke-width: $circle-border-width;
+    shape-rendering: geometricPrecision;
+}
+
+.circle_container__progress {
+    fill: none;
+    stroke-dashoffset: 20;
+    stroke-linecap: round;
+    stroke-dasharray: 75 100;
+    stroke-width: $circle-border-width;
+    transition: stroke-dashoffset 1s ease-in-out;
+    shape-rendering: geometricPrecision;
+}
+
+.stop1 {
+    stop-color: #e66465;
+  }
+  
+.stop2 {
+    stop-color: #9198e5;
+}

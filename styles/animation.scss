@@ -1,0 +1,143 @@
+// 손(Hand Shaking) 애니메이션
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes waving-hand {
+    0% {
+        transform: rotate(0deg);
+    }   
+    10% {
+        transform: rotate(10deg);
+    }    
+    20% {
+        transform: rotate(-6deg);
+    }    
+    30% {
+        transform: rotate(10deg);
+    }    
+    40% {
+        transform: rotate(-3.0deg);
+    }    
+    50% {
+        transform: rotate(8deg);
+    }    
+    60% {
+        transform: rotate(0deg);
+    }  
+    100% {
+        transform: rotate(0deg);
+    }     
+}
+
+
+// 글자 올라오는(Stagger) 애니메이션
+.stagger_item {
+    animation: showText 0.5s 1;
+}
+
+@keyframes showText {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+        color: aqua;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.stagger_item:nth-child(1) {
+    animation-delay: 0.07s;
+}
+.stagger_item:nth-child(2) {
+    animation-delay: 0.14s;
+}
+.stagger_item:nth-child(3) {
+    animation-delay: 0.21s;
+}
+.stagger_item:nth-child(4) {
+    animation-delay: 0.28s;
+}
+.stagger_item:nth-child(5) {
+    animation-delay: 0.35s;
+}
+
+// 차트(Chart) 애니메이션
+@keyframes stack1 {
+    0% {
+        width: 0; color: rgba(255, 255, 255, 0);}
+    40% {
+        color: rgba(255,255,255,1);}
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes stack2 {
+    0% {
+        width: 0; color: rgba(255, 255, 255, 0);}
+    40% {
+        color: rgba(255,255,255,1);}
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes stack3 {
+    0% {
+        width: 0; color: rgba(255, 255, 255, 0);}
+    40% {
+        color: rgba(255,255,255,1);}
+    100% {
+        width: 40%;
+    }
+}
+
+@keyframes stack4 {
+    0% {
+        width: 0; color: rgba(255, 255, 255, 0);}
+    40% {
+        color: rgba(255,255,255,1);}
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes stack5 {
+    0% {
+        width: 0; color: rgba(255, 255, 255, 0);}
+    40% {
+        color: rgba(255,255,255,1);}
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes anitext {
+    0%, 5%, 100% {
+        width: 0;
+    }
+    50%, 80% {
+        width: 100%;
+    }
+}
+
+@keyframes opatext {
+    20%, 80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
