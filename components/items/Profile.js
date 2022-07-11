@@ -37,7 +37,7 @@ export default function Profile() {
 
     return (
             <div className={styles.profile_container}>
-              <Image src='/../public/src/images/Profile.png' width="180px" height="237px"/>
+              <Image src='https://i.ibb.co/njBbxbg/Profile.png' width="180px" height="237px"/>
               <p>임지섭</p>
               <p>@ingb</p>
               <div className={styles.effect_container}>
