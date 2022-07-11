@@ -41,8 +41,8 @@ export default function Skills() {
                                                 <svg className={styles.circle_container} viewBox="2 -2 28 36" xmlns="http://www.w3.org/2000/svg">
                                                 <defs>
                                                     <linearGradient id='gradient'>
-                                                        <stop offset='0%' stop-color='#f03234' />
-                                                        <stop offset='100%' stop-color='#1b58f2' />
+                                                        <stop offset='0%' stopColor='#f03234' />
+                                                        <stop offset='100%' stopColor='#1b58f2' />
                                                     </linearGradient>
                                                 </defs>
                                                     <circle className={styles.circle_container__background} r={16} cx={16} cy={16}></circle>
