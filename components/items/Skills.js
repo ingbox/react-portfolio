@@ -24,11 +24,11 @@ export default function Skills() {
         customSlider.current.slickNext()
 
       }
-    
+
       const gotoPrev = () => {
         customSlider.current.slickPrev()
       }
-    
+
 
     return (
         <div>

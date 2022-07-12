@@ -1,23 +1,26 @@
 import styles from 'styles/Content.module.scss'
 import Hand from "components/items/Hand"
-// import Graph from "components/items/Graph"
 import Skills from 'components/items/Skills'
 import Profile from "components/items/Profile"
 import Article from "components/items/Article"
 import TimelineItem from 'components/items/TimelineItem'
 import TimelineData from 'components/datas/TImelineData'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 
-export default function Content({ data }) {
-    const [mounted, setMounted] = useState(false);
+export default function Content() {
+
+    const [height, setHeight] = useState("1270px");
+    const ref = useRef();
 
     useEffect(() => {
-        setMounted(true)
-      }, [])
-      if (!mounted) {
-        return null
-      }
+        function handleResize() {
+          console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
+          setHeight(ref.current.scrollHeight + "px");
+          console.log(height);
+    }
+        window.addEventListener('resize', handleResize)
+      })
 
     return (
         <div className={styles.cheif_container}>
@@ -41,7 +44,8 @@ export default function Content({ data }) {
                     {/* 2열 박스 */}
             <div className = {styles.container}>
                 <p>TIMELINE</p>
-                <div className={styles.timeline_container}>
+                <div ref = {ref} className={styles.timeline_container}>
+                    <div className={styles.midline} style = {{height: height}}/>
                     {TimelineData.length > 0 &&
                         <div className={styles.inline_container}>
                             {TimelineData.map((data, idx) => (
@@ -50,5 +54,6 @@ export default function Content({ data }) {
                     </div>}
                 </div>
             </div>
+
         </div>
     )}
