@@ -15,9 +15,9 @@ export default function Content() {
 
     useEffect(() => {
         function handleResize() {
-          console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
+        //   console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
           setHeight(ref.current.scrollHeight + "px");
-          console.log(height);
+        //   console.log(height);
     }
         window.addEventListener('resize', handleResize)
       })

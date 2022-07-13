@@ -9,3 +9,134 @@
     z-index: -1;
     background-color: white;
 }
+
+.cheif_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 89vw;
+    height: 100vh;
+    justify-content: center;
+    padding: 1vw;
+    margin: 0 0 0 11vw;
+    overflow: hidden;
+    gap: 5vw;
+ }
+
+ .project {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 25vw;
+    height: 30vh;
+    position: relative;
+
+
+    &_icon {
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.75);
+        border-radius: 50%;
+        position: absolute;
+        transition: width 550ms ease, height 550ms ease, right 550ms ease, background 550ms ease;
+		overflow: hidden;
+
+        // 아이콘을 위치
+        & .icon_container {
+            position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+        }
+
+        & .icon_image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            & .image {
+                position: absolute;
+                    width: 340%;
+                    height: 340%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 550ms ease;
+            }
+        }
+
+        // &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	left: 0;
+		// 	top: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background: linear-gradient(
+		// 		to top,
+		// 		rgba(0, 0, 0, 0.30) 0%,
+		// 		rgba(0, 0, 0, 0.10) 50%,
+		// 		transparent 100%
+		// 	);
+		// 	z-index: 1;
+		// 	opacity: 0;
+		// 	transition: opacity 550ms ease;
+		// }
+
+
+    }
+
+    & .icon_1 {
+        right: 80%;
+    }
+
+    & .icon_2 {
+        bottom: 25%;
+        right: 15%;
+    }
+
+
+    &:hover {
+		& .project_icon {
+            width: 5vw;
+            height: 5vw;
+			// &::after {
+			// 	opacity: 1;
+			// }
+			
+			// & .icon_2 {
+			// 	right: -10%;
+			// }
+
+
+			// .info--text {
+			// 	transition-delay: 550ms;
+			// 	opacity: 1;
+			// 	transform: translateY(0%);
+			// }
+		}
+
+        & .icon_1 {
+            right: 73%;
+            transition-delay: 100ms;
+            .icon_image {
+				.image {
+					opacity: 1;
+				}
+			}
+        }
+
+        & .icon_2 {
+            right: 10%;
+            .icon_image {
+				.image {
+					opacity: 1;
+				}
+			}
+        }
+	}
+
+ }

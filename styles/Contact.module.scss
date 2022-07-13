@@ -20,7 +20,6 @@
     align-items: center;
     margin: 0 0 0 11vw;
     overflow: hidden;
-
     //3d
     perspective: 1500px;
  }
@@ -34,6 +33,7 @@
    width: 40vw;
    height: 90vh;
    border-radius: 25px;
+   
    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
    left: 5vw;
 
@@ -246,10 +246,6 @@
    height: 100vh;
    justify-content: center;
    perspective: 1500px;
-
-   &:hover {
-      
-   }
  }
 
  @keyframes bingle {
