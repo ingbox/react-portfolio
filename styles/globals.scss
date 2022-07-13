@@ -48,3 +48,13 @@ table {
 
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&display=swap'); // 'Black Han Sans'
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic&family=Noto+Sans+KR:wght@300;400;500;700&display=swap'); // 'Noto Sans KR'
+
+::-moz-selection {
+	background: #FFD900;
+	color: #fff;
+}
+
+::selection {
+	background: #FFD900;
+	color: #fff;
+}

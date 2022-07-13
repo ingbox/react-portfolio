@@ -16,13 +16,34 @@
     width: 89vw;
     height: 100vh;
     justify-content: center;
+    align-items: center;
     padding: 1vw;
     margin: 0 0 0 11vw;
     overflow: hidden;
-    gap: 5vw;
+    gap: 0vw 5vh;
+ }
+
+ .inline_container {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 38vh;
+ }
+
+ .desc {
+    font-family: 'Noto Sans KR';
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.5em;
+    word-break: break-all;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0 0;
+
  }
 
  .project {
+    display: flex;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     width: 25vw;
