@@ -3,7 +3,7 @@ import styles from 'styles/Project.module.scss';
 import { AddOutline } from 'react-ionicons';
 import Image from "next/image";
 import { useState } from 'react';
-import YouTube from 'react-youtube';
+import YouTube, { YouTubeProps } from 'react-youtube';
 import ModalData from 'components/datas/ModalData';
 
 // error fixed
@@ -134,7 +134,6 @@ export default function Project() {
                 
                 </div>
 
-
         {modal && <div className={styles.modal_container}>
                 <div className = {styles.overlay} onClick = { toggleModal }/>
 
@@ -151,7 +150,6 @@ export default function Project() {
                 </div>
                 <button className = {styles.modal_button} onClick = { toggleModal }>Close</button>
                 </div>
-
         </div>
         }
         </div>
