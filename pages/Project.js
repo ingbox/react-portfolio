@@ -2,8 +2,38 @@ import { HeaderProject } from 'components/items/HeaderLink';
 import styles from 'styles/Project.module.scss';
 import { AddOutline } from 'react-ionicons';
 import Image from "next/image";
+import { useState } from 'react';
+import YouTube from 'react-youtube';
+
+import ModalData from 'components/datas/ModalData';
 
 export default function Project() {
+    
+    const [modal, setModal] = useState(false);
+    const [modex, setModex] = useState(0);
+    
+    const toggleModal = (num) => {
+        setModex(num);
+        console.log(ModalData);
+        setModal(!modal);
+    }
+
+    const onPlayerReady = (event) => {
+        // access to player in all event handlers via event.target
+        event.target.pauseVideo();
+      }
+    
+      const opts = {
+        height: '100%',
+        width: '100%',
+        playerVars: {
+          // https://developers.google.com/youtube/player_parameters
+          autoplay: 1,
+        },
+      };
+
+
+
     return (
         
     <div>
@@ -11,7 +41,7 @@ export default function Project() {
         <div className={styles.background}/>
         <div className={styles.cheif_container}>
 
-        <div className={styles.inline_container}>
+        <div className={styles.inline_container} onClick = { () => toggleModal(0) }>
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/rxnRsbB/project-elmo.jpg') no-repeat center / cover"}}>
 
                 <div className={`${styles.project_icon} ${styles.icon_1}`} style = {{bottom: "47%"}}>
@@ -36,10 +66,11 @@ export default function Project() {
             <div className={styles.desc}>
                 [파이썬 프로젝트] Librosa를 이용한 동물의 숲 음성 만들기
             </div>
-            
         </div>
 
-        <div className={styles.inline_container}>
+ 
+
+        <div className={styles.inline_container} onClick = { () => toggleModal(1) }>
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/276WCsK/project2.jpg') no-repeat center / cover"}}>
             <div className={`${styles.project_icon} ${styles.icon_1}`} style = {{bottom: "55%"}}>
                 <div className={styles.icon_container}>
@@ -104,6 +135,30 @@ export default function Project() {
                 </div>
                 
                 </div>
+
+
+
+
+
+        {modal && <div className={styles.modal_container}>
+                <div className = {styles.overlay} onClick = { toggleModal }/>
+
+                <div className={styles.modal}>
+                <div className = {styles.modal_image} style = {{background: ModalData[modex].image}}>
+                 <YouTube className = {styles.youtube} videoId = {ModalData[modex].youtube} opts={opts} onReady={ onPlayerReady } />
+                </div>
+                <div className = {styles.modal_title}>
+                       {ModalData[modex].title}
+                </div>
+
+                <div className = {styles.modal_text}>
+                       {ModalData[modex].text}
+                </div>
+                <button className = {styles.modal_button} onClick = { toggleModal }>Close</button>
+                </div>
+
+        </div>
+        }
         </div>
     </div>
     )

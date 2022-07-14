@@ -17,6 +17,7 @@
     "react-ionicons": "^4.2.0",
     "react-native-svg": "^12.3.0",
     "react-slick": "^0.29.0",
+    "react-youtube": "^9.0.3",
     "sass": "^1.53.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.5"
