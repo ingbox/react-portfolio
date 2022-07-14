@@ -4,7 +4,7 @@ import { AddOutline } from 'react-ionicons';
 import Image from "next/image";
 import { useState } from 'react';
 import YouTube, { YouTubeProps } from 'react-youtube';
-import ModalData from 'components/datas/ModalData';
+import ModalData from 'components/datas/ModData';
 
 // error fixed
 export default function Project() {
