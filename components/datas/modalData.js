@@ -10,7 +10,8 @@ const data = [
     image: "url('https://i.ibb.co/276WCsK/project2.jpg') no-repeat center",
     title: "파이썬 한걸음",
     text: "리엑트를 공부하였습니다", 
-    url: "www.naver.com"
+    url: "www.naver.com",
+    youtube : "dUdxG26nWWc"
 },
 {
     image: "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center",
