@@ -4,9 +4,9 @@ import { AddOutline } from 'react-ionicons';
 import Image from "next/image";
 import { useState } from 'react';
 import YouTube from 'react-youtube';
-
 import ModalData from 'components/datas/ModalData';
 
+// error fixed
 export default function Project() {
     
     const [modal, setModal] = useState(false);
@@ -31,8 +31,6 @@ export default function Project() {
           autoplay: 1,
         },
       };
-
-
 
     return (
         
@@ -137,15 +135,12 @@ export default function Project() {
                 </div>
 
 
-
-
-
         {modal && <div className={styles.modal_container}>
                 <div className = {styles.overlay} onClick = { toggleModal }/>
 
                 <div className={styles.modal}>
                 <div className = {styles.modal_image} style = {{background: ModalData[modex].image}}>
-                 <YouTube className = {styles.youtube} videoId = {ModalData[modex].youtube} opts={opts} onReady={ onPlayerReady } />
+                 <YouTube className = {styles.youtube} videoId = { ModalData[modex].youtube } opts={opts} onReady={ onPlayerReady } />
                 </div>
                 <div className = {styles.modal_title}>
                        {ModalData[modex].title}
