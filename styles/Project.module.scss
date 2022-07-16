@@ -81,11 +81,14 @@
             overflow: hidden;
 
             & .image {
+                
                 position: absolute;
-                    width: 340%;
-                    height: 340%;
+            
+                width: 340%;
+                height: 340%;
                 object-fit: cover;
                 opacity: 0;
+                
                 transition: opacity 550ms ease;
             }
         }
@@ -113,6 +116,7 @@
 
     & .icon_1 {
         right: 80%;
+        bottom: 55%;
     }
 
     & .icon_2 {
@@ -120,6 +124,15 @@
         right: 15%;
     }
 
+    & .icon_2_1 {
+        bottom: 22%;
+        right: 20%;
+    }
+
+    & .icon_3 {
+        bottom: 40%;
+        right: 50%;
+    }
 
     &:hover {
 		& .project_icon {
@@ -142,7 +155,7 @@
 		}
 
         & .icon_1 {
-            right: 73%;
+            right: 70%;
             transition-delay: 100ms;
             .icon_image {
 				.image {
@@ -152,13 +165,32 @@
         }
 
         & .icon_2 {
-            right: 10%;
             .icon_image {
 				.image {
 					opacity: 1;
 				}
 			}
         }
+        & .icon_2_1 {
+            right: 15%;
+            .icon_image {
+				.image {
+					opacity: 1;
+				}
+			}
+        }
+
+
+        & .icon_3 {
+            right: 43%;
+            transition-delay: 200ms;
+            .icon_image {
+				.image {
+					opacity: 1;
+				}
+			}
+        }
+
 	}
 
  }
@@ -239,5 +271,4 @@
     & .youtube {
         height: 100%;
     }
-
  }

@@ -18,10 +18,10 @@ export default function Project() {
         setModal(!modal);
     }
 
-    const onPlayerReady = (event) => {
-        // access to player in all event handlers via event.target
-        event.target.pauseVideo();
-      }
+    // const onPlayerReady = (event) => {
+    //     // access to player in all event handlers via event.target
+    //     event.target.pauseVideo();
+    //   }
     
       const opts = {
         height: '100%',
@@ -29,6 +29,11 @@ export default function Project() {
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
+          controls: 0,
+          rel: 0,
+          showinfo: 0,
+          mute: 0,
+          loop: 1
         },
       };
 
@@ -47,7 +52,7 @@ export default function Project() {
                         <AddOutline className={styles.icon} color={'#ffffff'}/>
                     </div>
                     <div className={styles.icon_image}>
-                            <Image className= {styles.image} src='https://i.ibb.co/g9YzXsw/project-item1.jpg' layout='fill' objectFit='contain'/>
+                            <Image className= {styles.image} src='https://i.ibb.co/qnL1fGT/project-item1.jpg' layout='fill' objectFit='contain'/>
                     </div>
                 </div>
 
@@ -70,21 +75,29 @@ export default function Project() {
 
         <div className={styles.inline_container} onClick = { () => toggleModal(1) }>
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/276WCsK/project2.jpg') no-repeat center / cover"}}>
-            <div className={`${styles.project_icon} ${styles.icon_1}`} style = {{bottom: "55%"}}>
+            <div className={`${styles.project_icon} ${styles.icon_1}`}>
                 <div className={styles.icon_container}>
                         <AddOutline className={styles.icon} color={'#ffffff'}/>
                     </div>
                     <div className={styles.icon_image}>
-                            <Image className= {styles.image} src='https://i.ibb.co/g9YzXsw/project-item1.jpg' layout='fill' objectFit='contain'/>
+                            <Image className= {styles.image} src='https://i.ibb.co/qnL1fGT/project-item1.jpg' layout='fill' objectFit='contain'/>
                     </div>
                 </div>
 
-                <div className={`${styles.project_icon} ${styles.icon_2}`} style = {{ bottom: "22%", right: "20%"}}>
+                <div className={`${styles.project_icon} ${styles.icon_2_1}`}>
                     <div className={styles.icon_container}>
                         <AddOutline className={styles.icon} color={'#ffffff'}/>
                     </div>
                     <div className={styles.icon_image}>
-                            <Image className= {styles.image} src='https://i.ibb.co/dtXfZbj/project-item2.jpg' layout='fill' objectFit='contain'/>
+                            <Image className= {styles.image} src='https://i.ibb.co/G9hFRyJ/project-item2-2.jpg' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+                <div className={`${styles.project_icon} ${styles.icon_3}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://i.ibb.co/nPS4mj3/project-item2-3.jpg' layout='fill' objectFit='contain'/>
                     </div>
                 </div>
             </div>
@@ -139,7 +152,7 @@ export default function Project() {
 
                 <div className={styles.modal}>
                 <div className = {styles.modal_image} style = {{background: ModalData[modex].image}}>
-                 <YouTube className = {styles.youtube} videoId = { ModalData[modex].youtube } opts={opts} onReady={ onPlayerReady } />
+                 <YouTube className = {styles.youtube} videoId = { ModalData[modex].youtube } opts={opts} />
                 </div>
                 <div className = {styles.modal_title}>
                        {ModalData[modex].title}

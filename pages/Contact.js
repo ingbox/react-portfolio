@@ -1,10 +1,11 @@
 import { HeaderContact } from 'components/items/HeaderLink';
 import styles from 'styles/Contact.module.scss'
 import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser';
+import Image from "next/image";
 import { TiLocation } from 'react-icons/ti';
-import { IoIosCall } from 'react-icons/io'
-import { MdEmail } from 'react-icons/md'
+import { IoIosCall } from 'react-icons/io';
+import { MdEmail } from 'react-icons/md';
 
 export default function Contact() {
 
@@ -48,7 +49,7 @@ export default function Contact() {
           <div className={styles.back_container}>
           <p>Get in touch</p>
             <div className = {styles.back_child_container}>
-              <form ref = {form} className={styles.form} onSubmit={sendEmail}>
+              <form ref = { form } className={styles.form} onSubmit={sendEmail}>
                   
                     <input className={styles.input} type="text" placeholder={"Name"} name= "user_name"/>
                     <input className={styles.input} type="text" placeholder={"Email"} name= "user_email"/>
@@ -60,9 +61,16 @@ export default function Contact() {
           </div>
           </div>
           <div className={styles.ingb_container} onClick={ isClicked }>
-          <div className={styles.ingb}/>
-          <div className={styles.ingb_body}/>
-          <div className={styles.ingb_hand}/>
+            <svg className={styles.map_container} viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+              
+              <circle className = {styles.bingle_forward} r={2} cx={4} cy={7} stroke={"#FFD400"} stroke-width="0.1" fill="none" stroke-dasharray="0.3"></circle>
+             
+              <circle className = {styles.bingle_backward}  r={1.25} cx={4} cy={7} stroke={"#FFD400"} stroke-width="0.1" fill="none" stroke-dasharray="0.3"></circle>
+              <circle r={0.5} cx={4} cy={7} fill={"#FFD400"}></circle>
+            </svg>
+            <div className={styles.ingb}/>
+            <div className={styles.ingb_body}/>
+            <div className={styles.ingb_hand}/>
           </div>
         </div>
       </div>
