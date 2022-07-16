@@ -141,3 +141,11 @@
         opacity: 0;
     }
 }
+
+
+// SkillsItem DashArray
+@keyframes draw {
+    from {
+        stroke-dashoffset: 75;
+    }
+}

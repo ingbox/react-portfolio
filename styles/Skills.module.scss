@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./animation";
 
 .parts_container {
     position: relative;
@@ -16,63 +17,26 @@
     stroke: white;
     stroke-dasharray: 75 100;
     stroke-linecap: round;
-    
-  }
 
-.circle_container__background {
-    fill: none;
-    stroke: $default-color;
-    stroke-width: $circle-border-width;
-    shape-rendering: geometricPrecision;
-}
-
-.circle_container__progress {
-    fill: none;
-    stroke-linecap: round;
-    stroke-dashoffset: 20;
-    stroke-dasharray: 75 100;
-    stroke-width: $circle-border-width;
-    transition: stroke-dashoffset 1s ease;
-    animation: draw 2s ease;
-    shape-rendering: geometricPrecision;
-}
-
-.stop1 {
-    stop-color: #e66465;
-  }
-  
-.stop2 {
-    stop-color: #9198e5;
-}
-
-@keyframes draw {
-    from {
-        stroke-dashoffset: 75;
+    & .circle_container__background {
+        fill: none;
+        stroke: $default-color;
+        stroke-width: $circle-border-width;
+        shape-rendering: geometricPrecision;
     }
-    to {
-        stroke-dashoffset: 20;
-    }
-    
-}
 
-// .skill_parts_container {
-//     position: absolute;
-//     display: flex;
-//     width: 100%;
-//     flex-wrap: wrap;
-//     padding: 0vh 3vw 0vh 3vw;
-//     gap: 0vh 2vw;
-//     justify-content: center;
-// }
+    & .circle_container__progress {
+        fill: none;
+        stroke-linecap: round;
+        stroke-dasharray: 75 100;
+        stroke-width: $circle-border-width;
+        transition: stroke-dashoffset 1s ease;
+        animation: draw 2s ease;
+        shape-rendering: geometricPrecision;
+    }
+  }
 
 .skill_parts {
-    width: auto;
-    height: auto;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png');
-    background-position: center;
-    background-size: 10vh;
-    background-repeat: no-repeat;
-
     &:hover {
         transform: translateY(-5px);
         transition: 0.3s;
@@ -82,19 +46,15 @@
 
 .slider_container {
     width:50%;
+    height:500px;
     text-align: center;
-    color:white;
     justify-content: center;
     align-items: center;
-
     background: fade(#ebebeb, 10%);
-    height:500px;
 }
 
 .prevButton {
     position: absolute;
-    // pointer-events: none;
-    display: inline-block;
     padding: 8px 16px;
     text-decoration: none;
     background-color: #f1f1f1;
@@ -109,7 +69,6 @@
 
 .nextButton {
     position: absolute;
-    display: inline-block;
     padding: 8px 16px;
     text-decoration: none;
     background-color: #f1f1f1;
@@ -120,14 +79,4 @@
         background-color: #ddd;
         color: black;
     }
-}
-
-
-.test_container {
-    // display: flex;
-    flex-wrap: wrap;
-    gap: 0vh 2vw;
-    justify-content: center;
-    padding: 0vh 3vw 0vh 3vw;
-    width: auto;
 }
