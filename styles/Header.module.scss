@@ -1,159 +1,297 @@
 @import "./mixins";
 @import "./variables";
 
-
 @include mobile {
+    // .header_layout {
+    //     width: 99vw;
+    //     height: 10vh;
+    //     position: fixed;
+    //     margin: 0 auto; // 가운데 정렬
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     background: #3326ae;
+    // }
+
     .header_style {
         width: 99vw;
         height: 10vh;
-        display: flex;
         position: fixed;
+        display: flex;
         margin: 0 auto; // 가운데 정렬
         bottom: 0;
         left: 0;
         right: 0;
-        border-radius: 3em;
-        background: #4D54FF;
-        // transition: ease all .3s;
+        background: #3326ae;
       }
 }
 
-
 @include tablet {
+
+    
+    .header_layout {
+        width: 8vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #3326ae;
+        z-index: -2;
+    }
+
     .header_style {
-        width: 10vw;
+        width: 8vw;
         height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         position: fixed;
-        top: 0;
-        left: 0;
-        background: #4D54FF;
-        transition: .3s;
-        z-index: -2;
+        // top: 0;
+        // left: 0;
+    }
+
+    .container_home {
+        &:nth-child(1) .link{
+            color: #fff;
+    }
+
+    & .link {
+        width: 5vh;
+        height: 5vh;
+        }
+    }
+
+    .container_project {
+        &:nth-child(2) .link{
+            color: #fff;
+    }
+
+    & .link {
+        width: 5vh;
+        height: 5vh;
+        }
+    }
+
+    .container_contact {
+        &:nth-child(3) .link{
+            color: #fff;
+    }
+
+    & .link {
+        width: 5vh;
+        height: 5vh;
+        }
     }
 }
 
 
 @include desktop {
+
+    
     .header_layout {
-        width: 11vw;
+        width: 8vw;
         height: 100vh;
         position: fixed;
         top: 0;
         left: 0;
-        background: #4D54FF;
+        background: #3326ae;
         z-index: -2;
     }
 
     .header_style {
-        width: 11vw;
+        width: 8vw;
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         position: fixed;
         top: 0;
         left: 0;
     }
 
-    .container {
-        position: relative;
-        width: 11vw;
-        height: 20vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       
-         // indicator Home
-        &:nth-child(1):hover ~.indicator{
-            transform: translateY(calc(0vh));
-        }
-        &:nth-child(2):hover ~.indicator{
-            transform: translateY(calc(23.5vh));
-        }
-        &:nth-child(3):hover  ~.indicator{
-            transform: translateY(calc(47.5vh));
-        }
-        &:nth-child(4):hover  ~.indicator{
-            transform: translateY(calc(71.7vh));
+    .container_home {
+        &::after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            left: 6.5vw;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 10px;
+            background-color: #f8f9ff;
+            box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
         }
 
-         // indicator Project
-        &:nth-child(1):hover ~.indicator_Project{
-            transform: translateY(calc(-23.5vh));
-        }
-        &:nth-child(2):hover ~.indicator_Project{
-            transform: translateY(calc(0));
-        }
-        &:nth-child(3):hover  ~.indicator_Project{
-            transform: translateY(calc(24vh));
-        }
-        &:nth-child(4):hover  ~.indicator_Project{
-            transform: translateY(calc(48.2vh));
+        &:nth-child(1)::after {
+            opacity: 1;
         }
 
-        // indicator Goal
-        &:nth-child(1):hover ~.indicator_Goal{
-            transform: translateY(calc(-47.5vh));
-        }
-        &:nth-child(2):hover ~.indicator_Goal{
-            transform: translateY(calc(-24vh));
-        }
-        &:nth-child(3):hover  ~.indicator_Goal{
-            transform: translateY(calc(0));
-        }
-        &:nth-child(4):hover  ~.indicator_Goal{
-            transform: translateY(calc(24.2vh));
-        }
-
-        // indicator Contact 
-        &:nth-child(1):hover ~.indicator_Contact{
-            transform: translateY(calc(-71.7vh));
-        }
-        &:nth-child(2):hover ~.indicator_Contact{
-            transform: translateY(calc(-48.2vh));
-        }
-        &:nth-child(3):hover  ~.indicator_Contact{
-            transform: translateY(calc(-24.2vh));
-        }
-        &:nth-child(4):hover  ~.indicator_Project{
-            transform: translateY(calc(0));
-        }
-
-        // Home이 클릭되었을 때 동작할 폰트 동작
-        @for $i from 1 through 4 {
-        &:nth-child(#{$i}):hover .link{    
-            transform: translateX(5vw) scale(0.5);
-            ~ span {
-                opacity: 1;
-                transform: translateX(-10px);
+        &:nth-child(1) .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
             }
         }
-    }
-           
+
+        @each $i in 2,3 {
+            &:nth-child(#{$i}):hover .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            &:nth-child(#{$i}):hover::after {
+                opacity: 1;
+                }
+        }
+
         // 이미지
         & .link {
-            position:relative;
-            display: block;
-            width: 17vh;
-            height: 17vh;
-            padding: 0vh 4.7vh 0vh 0vh;
-            color: white;
+            width: 10vh;
+            height: 10vh;
+        }
+
+        // 글자
+        & span {
+            position: absolute;
+            opacity: 0;
+            font-family: 'Noto Sans KR';
+            font-weight: 600; //bold
+            color: #fff;
+            font-size: 1.3em;
             transition: 0.5s;
-            text-align: center;
-            z-index: 10;
+            transform: translateX(-20px);
+        }
+    }
+
+    .container_project {
+
+        &::after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            left: 6.5vw;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 10px;
+            background-color: #f8f9ff;
+            box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        //고정하기
+        &:nth-child(2)::after {
+            opacity: 1;
+        }
+
+        &:nth-child(2) .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
+            }
+        }
+
+        @each $i in 1,3 {
+            &:nth-child(#{$i}):hover .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            &:nth-child(#{$i}):hover::after {
+                opacity: 1;
+                }
+        }
+
+        // 이미지
+        & .link {
+            width: 10vh;
+            height: 10vh;
         }
         
         // 글자
         & span {
             position: absolute;
             opacity: 0;
-            font-family: 'Black Han Sans';
-            // font-weight: 400; //bold
-            font-size: 1.5em;
+            font-family: 'Noto Sans KR';
+            font-weight: 600; //bold
+            color: #fff;
+            font-size: 1.3em;
+            transition: 0.5s;
+            transform: translateX(-20px);
+        }
+
+    }
+
+    .container_contact {
+
+        &::after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            left: 6.5vw;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 10px;
+            background-color: #f8f9ff;
+            box-shadow: 0px 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+        }
+
+        &:nth-child(3)::after {
+            opacity: 1;
+        }
+
+        &:nth-child(3) .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
+            }
+        }
+
+
+        @each $i in 1,2 {
+            &:nth-child(#{$i}):hover .link{
+                transform: translateX(4vw) scale(0.5);
+                color: #fa949d;
+                ~ span {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            &:nth-child(#{$i}):hover::after {
+                opacity: 1;
+                }
+        }
+
+        // 이미지
+        & .link {
+            width: 10vh;
+            height: 10vh;
+        }
+
+        // 글자
+        & span {
+            position: absolute;
+            opacity: 0;
+            font-family: 'Noto Sans KR';
+            font-weight: 600; //bold
+            color: #fff;
+            font-size: 1.3em;
             transition: 0.5s;
             transform: translateX(-20px);
         }
@@ -161,166 +299,57 @@
 }
 
 
-.indicator {
-    --color: rgba(255, 255, 255, 1);
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    background-color: #29fd53;
-    transition: transform 0.4s;
-    
-    left: 7.5vw;
-    top: 9.3vh;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 0.5vw solid #fff;
-    z-index: unset;
+.container_home {
+    position: relative;
+    width: 8vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &::before {
-        content: '';
-        position: absolute;
-        right: 50%;
-        top: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-bottom-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
-        
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        right: 50%;
-        bottom: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-top-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
+    // 이미지
+    & .link {
+        position:relative;
+        color: #857ccf;
+        transition: 0.5s;
+        z-index: 10;
     }
 }
 
-.indicator_Project {
-    --color: rgba(255, 255, 255, 1);
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    background-color: #29fd53;
-    transition: transform 0.4s;
-    
-    left: 7.5vw;
-    top: 32.8vh;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 0.5vw solid #fff;
-    z-index: unset;
+.container_project {
+    position: relative;
+    width: 8vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &::before {
-        content: '';
-        position: absolute;
-        right: 50%;
-        top: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-bottom-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
-        
-    }
 
-    &::after {
-        content: '';
-        position: absolute;
-        right: 50%;
-        bottom: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-top-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
+    // 이미지
+    & .link {
+        position:relative;
+        color: #857ccf;
+        transition: 0.5s;
+        z-index: 10;
     }
 }
 
-.indicator_Goal {
-    --color: rgba(255, 255, 255, 1);
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    background-color: #29fd53;
-    transition: transform 0.4s;
-    
-    left: 7.5vw;
-    top: 56.8vh;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 0.5vw solid #fff;
-    z-index: unset;
+.container_contact {
+    position: relative;
+    width: 8vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &::before {
-        content: '';
-        position: absolute;
-        right: 50%;
-        top: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-bottom-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
-        
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        right: 50%;
-        bottom: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-top-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
-    }
-}
-
-.indicator_Contact {
-    --color: rgba(255, 255, 255, 1);
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    background-color: #29fd53;
-    transition: transform 0.4s;
-    
-    left: 7.5vw;
-    top: 81vh;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 0.5vw solid #fff;
-    z-index: unset;
-
-    &::before {
-        content: '';
-        position: absolute;
-        right: 50%;
-        top: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-bottom-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
-        
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        right: 50%;
-        bottom: -3.7vh;
-        width: 2vw;
-        height: 3vh;
-        background: transparent;
-        border-top-right-radius: 1.5vh;
-        box-shadow: 15px 0px 0px -1px var(--color);
+    // 이미지
+    & .link {
+        position:relative;
+        color: #857ccf;
+        transition: 0.5s;
+        z-index: 10;
     }
 }

@@ -17,11 +17,6 @@ export default function Project() {
         console.log(ModalData);
         setModal(!modal);
     }
-
-    // const onPlayerReady = (event) => {
-    //     // access to player in all event handlers via event.target
-    //     event.target.pauseVideo();
-    //   }
     
       const opts = {
         height: '100%',

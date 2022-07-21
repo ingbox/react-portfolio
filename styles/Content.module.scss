@@ -2,7 +2,41 @@
 @import "./animation";
 @import "./variables";
 
+@include mobile {
+
+    .cheif_container {
+        position: fixed;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 10vh);
+        align-items: center;
+        margin: 0 0 10vh 0;
+        overflow: auto;
+     }
+
+    .container {
+        width: 90vw;
+    }
+
+    .timeline_container {
+        margin: 0.5vh 1.5vw 3vh 1.5vw;
+    }
+}
+
 @include desktop {
+
+    .cheif_container {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 10vw);
+        align-items: center;
+        margin: 0 0 0 10vw;
+     }
+
     .container {
         width: 44vw;
     }
@@ -27,11 +61,17 @@
 @include tablet {
     .cheif_container {
         flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 10vw);
+        align-items: center;
+        margin: 0 0 0 10vw;
      }
 
     // 타임라인(Timeline)
     .timeline_container {
-        margin: 0.5vh 1.5vw 3vh 3vw;
+        margin: 0.5vh 0vw 3vh 3vw;
     }
 
     // 프로필 사진
@@ -45,21 +85,15 @@
     }
 
     .skill_container {
-        width: 96vh;
+        width: 82.5vw;
     }
     
     .timeline_container {
-        width: 96vh;
+        width: 82.5vw;
     }
 }
 
 // ---------- Common Code 코드 한번에 당기기 Shift tab
-.cheif_container {
-    display: flex;
-    width: calc(100% - 11vw);
-    align-items: center;
-    margin: 0 0 0 11vw;
- }
 
 .container {
     display: flex;

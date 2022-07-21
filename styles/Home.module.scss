@@ -1,12 +1,43 @@
-.background {
-    position: fixed;
-    margin: 0 0 0 10vw;
-    border-radius: 25px;
-    top: 0;
-    left: 0;
-    width: 90vw;
-    height: 100vh;
-    z-index: -1;
-    background-color: white;
-    
+@import "./mixins";
+
+
+@include desktop {
+    .background {
+        position: fixed;
+        margin: 0 0 0 8vw;
+        top: 0;
+        left: 0;
+        width: 92vw;
+        height: 100vh;
+        z-index: -1;
+        background-color: white;
+    }
+}
+
+@include tablet {
+    .background {
+        position: fixed;
+        margin: 0 0 0 8vw;
+
+        top: 0;
+        left: 0;
+        width: 92vw;
+        height: 100vh;
+        z-index: -1;
+        background-color: white;
+    }
+}
+
+@include mobile {
+    .background {
+        position: fixed;
+        margin: 0 0 10vh 0;
+
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-color: white;
+    }
 }
