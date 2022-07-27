@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: 0vh 2vw;
+    gap: 2vh 2vw;
     justify-content: center;
     padding: 1vh 3vw 0vh 3vw;
 }
@@ -17,6 +17,7 @@
     stroke: white;
     stroke-dasharray: 75 100;
     stroke-linecap: round;
+    position: relative;
 
     & .circle_container__background {
         fill: none;
@@ -34,9 +35,22 @@
         animation: draw 2s ease;
         shape-rendering: geometricPrecision;
     }
+
+
   }
 
 .skill_parts {
+    position: relative;
+
+    // &::before {
+    //     content: '70';
+    //     position: absolute;
+    //     font-size: 1em;
+    //     font-family: 'Noto Sans KR';
+    //     left: calc(50% - 0.7em);
+    //     bottom: 10%;
+    // }
+
     &:hover {
         transform: translateY(-5px);
         transition: 0.3s;

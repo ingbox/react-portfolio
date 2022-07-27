@@ -101,7 +101,7 @@ export default function Project() {
             </div>
             </div>
 
-            <div className={styles.inline_container}>
+            <div className={styles.inline_container}  onClick = { () => toggleModal(2)}>
 
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center / contain"}}>
                 
@@ -112,8 +112,8 @@ export default function Project() {
             </div>
 
 
-            <div className={styles.inline_container}>
-            <div className={styles.project} style = {{background : "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center / contain"}}>
+            <div className={styles.inline_container} onClick = { () => toggleModal(3)}>
+            <div className={styles.project} style = {{background : "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center / cover"}}>
                 
             </div>
             <div className={styles.desc}>
@@ -122,8 +122,8 @@ export default function Project() {
             </div>
 
 
-            <div className={styles.inline_container}>
-            <div className={styles.project} style = {{background : "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center / contain"}}>
+            <div className={styles.inline_container} onClick = { () => toggleModal(4)}>
+            <div className={styles.project} style = {{background : "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center / cover"}}>
                 
                 </div>
                 <div className={styles.desc}>
@@ -132,8 +132,8 @@ export default function Project() {
                 </div>
 
 
-                <div className={styles.inline_container}>
-                <div className={styles.project} style = {{background : "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center / contain"}}>
+                <div className={styles.inline_container} onClick = { () => toggleModal(5)}>
+                <div className={styles.project} style = {{background : "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center / cover"}}>
     
                 </div>
                 <div className={styles.desc}>

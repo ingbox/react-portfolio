@@ -20,13 +20,19 @@ const data = [
     url: "www.naver.com"
 },
 {
-    image: "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center",
+    image: "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center",
     title: "파이썬 한걸음",
     text: "파이썬을 공부하였습니다", 
     url: "www.naver.com"
 },
 {
-    image: "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center",
+    image: "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center",
+    title: "파이썬 한걸음",
+    text: "파이썬을 공부하였습니다", 
+    url: "www.naver.com"
+},
+{
+    image: "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center",
     title: "파이썬 한걸음",
     text: "파이썬을 공부하였습니다", 
     url: "www.naver.com"
