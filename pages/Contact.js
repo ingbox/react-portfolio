@@ -1,19 +1,15 @@
 import { HeaderContact } from 'components/items/HeaderLink';
 import styles from 'styles/Contact.module.scss'
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import moment from "moment";
 import Image from "next/image";
-import { TiLocation } from 'react-icons/ti';
-import { IoIosCall } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
+
+import { BsPinAngleFill } from 'react-icons/bs';
+import { FiPaperclip } from 'react-icons/fi';
+import { VolumeLow } from 'react-ionicons';
 
 export default function Contact() {
-
-  const [isSelected, setSelected] = useState(0);
-  
-  const isClicked = () => {
-    setSelected((prev) => !prev)
-  }
 
   const form = useRef();
 
@@ -30,47 +26,149 @@ export default function Contact() {
       alert('성공적으로 전송되었습니다')
   };
 
+  const [currentDate, setCurrentDate] = useState('');
+  const [currentNow, setCurrentNow] = useState('');
+ 
+  useEffect(() => {
+    var date = moment().utcOffset('+09:00').format('MMM DD, YYYY hh:mm');
+    setCurrentDate(
+      date
+    );
+  }, []);
+
+  const nowtime = (offset) => {
+    var now = moment().utcOffset(offset).format('MMM DD, YYYY');
+    return now;
+    }
+
     return (
       <div>
         <HeaderContact/>
         <div className={styles.background}/>
         <div className={styles.cheif_container}>
-          <div className={isSelected ?  `${styles.box} ${styles.box_animation}` : `${styles.box} ${styles.box_origin}`} >
-          <div className={styles.contact_container}>
-          <p>Get In Touch</p>
-          <p>Feel free to contact me for any request or collaboration.</p>
-          <div className={styles.contact_item}>
-            <div className={styles.item_container}><TiLocation className={styles.item}/><span>경기도 안성시 혜산로</span></div>
-            <div className={styles.item_container}><IoIosCall className={styles.item}/><span>+82 xxx-xxxx-xxxx</span></div>
-            <div className={styles.item_container}><MdEmail  className={styles.item}/><span>ingb_@naver.com</span></div>
-          </div>
-          <button className={styles.front_button}>Email Now</button>
-          </div>
-          <div className={styles.back_container}>
-          <p>Get in touch</p>
-            <div className = {styles.back_child_container}>
-              <form ref = { form } className={styles.form} onSubmit={sendEmail}>
-                  
-                    <input className={styles.input} type="text" placeholder={"Name"} name= "user_name"/>
-                    <input className={styles.input} type="text" placeholder={"Email"} name= "user_email"/>
-                    <input className={styles.input} type="text" placeholder={"Subject"} name= "subject"/>
-                    <textarea className={styles.textarea} type="text" placeholder={"Message"} name= "message"/>
-                    <button type="submit" className={styles.button}>Send Email</button>
-              </form>
+          <div className={styles.main_container}>
+
+            <div className={styles.message_container}>
+              <div className={styles.message_list}>
+
+              <div className={styles.profile_container}>
+              <div className={styles.profile} style = {{background: "url('https://i.ibb.co/Y7KJHrv/image.jpg') no-repeat center / cover"}}/>
               </div>
-          </div>
-          </div>
-          <div className={styles.ingb_container} onClick={ isClicked }>
-            <svg className={styles.map_container} viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                <div className={styles.title_container}>
+                <div className={styles.name}>잉브</div>
+                  <div className={styles.title}>가나다</div>
+                  <div className={styles.message}>집안 인테리어로 바쁨😅😅</div>
+                  <div className={styles.location}>경기도 안성시 숭인동</div>
+                </div>
+
+                <div className={styles.time_container}>
+                <div className = {styles.time}>{ nowtime('-24:00') }</div>
+                <BsPinAngleFill className = {styles.pin}/>
+                <FiPaperclip className = {styles.clip}/>
+              </div>
+              </div>
+
+
+              <div className={styles.message_list}>
+              <div className={styles.profile_container}>
+              <div className={styles.profile} style = {{background: "url('https://image.newdaily.co.kr/site/data/img/2010/08/17/2010081700051_0.jpg') no-repeat top / cover"}}/>
+              </div>
+              <div className={styles.title_container}>
+                <div className={styles.name}>강동원빈</div>
+                <div className={styles.title}>아직 한 발 남았다...</div>
+                <div className={styles.message}>이력서...</div>
+                <div className={styles.location}>이나영 마음 속</div>
+              </div>
+              <div className={styles.time_container}>
+                <div className = {styles.time}>{ nowtime('-48:00') }</div>
+                <BsPinAngleFill className = {styles.pin}/>
+                <FiPaperclip className = {styles.clip}/>
+              </div>
+              </div>
+
               
-              <circle className = {styles.bingle_forward} r={2} cx={4} cy={7} stroke={"#FFD400"} strokeWidth="0.1" fill="none" strokeDasharray="0.3"></circle>
-             
-              <circle className = {styles.bingle_backward}  r={1.25} cx={4} cy={7} stroke={"#FFD400"} strokeWidth="0.1" fill="none" strokeDasharray="0.3"></circle>
-              <circle r={0.5} cx={4} cy={7} fill={"#FFD400"}></circle>
-            </svg>
-            <div className={styles.ingb}/>
-            <div className={styles.ingb_body}/>
-            <div className={styles.ingb_hand}/>
+              <div className={styles.message_list}>
+              <div className={styles.profile_container}>
+              <div className={styles.profile} style = {{background: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Elon_Musk_Royal_Society.jpg/225px-Elon_Musk_Royal_Society.jpg') no-repeat top / cover"}}>
+                <div className={styles.notread}/>
+              </div>
+              </div>
+              <div className={styles.title_container}>
+                <div className={styles.name}>Elon Musk</div>
+                <div className={styles.title}>Scout Offer</div>
+                <div className={styles.message}>Would you like to work with me?</div>
+                <div className={styles.location}>Space Exploration Technologies Corp.</div>
+              </div>
+              <div className={styles.time_container}>
+              <div className = {styles.time}>{ nowtime('-48:00') }</div>
+                <BsPinAngleFill className = {styles.pin}/>
+                <FiPaperclip className = {styles.clip}/>
+              </div>
+              </div>
+
+
+              <div className={styles.message_list}>
+              <div className={styles.profile_container}>
+              <div className={styles.profile} style = {{background: "url('https://i.ibb.co/MMSLnDZ/image.jpg') no-repeat center / cover"}}>
+                <div className={styles.notread}/>
+              </div>
+              </div>
+              <div className={styles.title_container}>
+                <div className={styles.name}>희망의 시작 요그사론</div>
+                <div className={styles.title}>삶의 신이여! 경배하노라!</div>
+                <div className={styles.message}>구하라 그러면 얻을지어다</div>
+                <div className={styles.location}>밝은지상의 낙원</div>
+              </div>
+              <div className={styles.time_container}>
+              <div className = {styles.time}>{ nowtime('-72:00') }</div>
+                <BsPinAngleFill className = {styles.pin}/>
+                <FiPaperclip className = {styles.clip}/>
+              </div>
+              </div>
+
+
+              <div className={styles.message_list}>
+              <div className={styles.profile_container}>
+              <div className={styles.profile} style = {{background: "url('https://i.ibb.co/yfFBvWM/image.jpg') no-repeat center / cover"}}>
+                <div className={styles.notread}/>
+              </div>
+              </div>
+              <div className={styles.title_container}>
+                <div className={styles.name}>12시에 우는 망나뇽</div>
+                <div className={styles.title}>망!망망!!망망</div>
+                <div className={styles.message}>망!망망망!망망!!망망망!!망망</div>
+                <div className={styles.location}>관동지방 금빛시티 용의 굴</div>
+              </div>
+              <div className={styles.time_container}>
+              <div className = {styles.time}>{ nowtime('-72:00') }</div>
+                <BsPinAngleFill className = {styles.pin}/>
+                <FiPaperclip className = {styles.clip}/>
+              </div>
+              </div>
+
+            </div>
+
+            <form ref = { form } className={styles.contact_container} onSubmit={sendEmail}>
+              <div className={styles.contact}><p>Contact</p></div>
+              <div className={styles.contact_profile_container}>
+          
+              <div className={styles.contact_profile}></div>
+              <div className={styles.contact_profile_name}>
+                <input className={styles.input} type="text" placeholder={"Name"} name= "user_name"/>
+                <input className={styles.input} type="text" placeholder={"Email"} name= "user_email"/>
+              </div>
+              </div>
+              <div>
+                <p className={styles.now}>Today, {currentDate}</p>
+              </div>
+              <div className={styles.contact_title_container}>
+              <input className={styles.input_title} type="text" placeholder={"Subject"} name= "subject"/>
+              </div>
+              <div className={styles.textarea_container}>
+                <textarea className={styles.textarea} type="text" placeholder={"Write A Message.."} name= "message"/>
+              </div>
+              <div><button type="submit" className={styles.button}>Send Email</button></div>
+            </form>
           </div>
         </div>
       </div>

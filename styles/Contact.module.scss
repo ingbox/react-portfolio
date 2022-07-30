@@ -8,18 +8,7 @@
     height: 100vh;
     z-index: -1;
     background-color: white;
-
-   //  background-size: 300% 300%;
-   //  background-image: linear-gradient(
-   //        -45deg, 
-   //        rgba(59,173,227,1) 0%, 
-   //        rgba(87,111,230,1) 25%, 
-   //        rgba(152,68,183,1) 51%, 
-   //        rgba(255,53,127,1) 100%
-   //  );  
-   //  animation: AnimateBG 20s ease infinite;
 }
-
 
 .cheif_container {
     display: flex;
@@ -29,209 +18,269 @@
     justify-content: center;
     align-items: center;
     margin: 0 0 0 11vw;
-    overflow: hidden;
-    //3d
-    perspective: 1500px;
  }
 
-.box {
+.main_container {
    display: flex;
-   position: absolute;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 40vw;
-   height: 75vh;
+   width: 65vw;
+   height: 90vh;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+   position: relative;
    border-radius: 25px;
-   
-   // box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-   left: 5vw;
-
-   transform-style: preserve-3d;
+   overflow: hidden;
 }
 
- .contact_container {
+.message_container {
    display: flex;
-   width: 100%;
-   height: 80%;
-   background-color: #3326AE;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   border-radius: 25px;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-   left: 5vw;
-   backface-visibility: hidden;
-
-   & p:nth-child(1){
-      font-family: 'Noto Sans KR';
-      font-size: 3em;
-      letter-spacing: -3px;
-      font-weight: 800;
-      color: #FFF;
-      margin-bottom: 2vh;
-   }
-
-   & p {
-      font-family: 'Noto Sans KR';
-      font-weight: 300;
-      font-size: 1.3em;
-      color: #FFF;
-   }
- } 
-
- .contact_item {
-   display: flex;
-   width: 100%;
-   height: 200px;
-   margin: 3vh 0 1vh 0;
- }
-
- .item_container {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 33.3%;
+   position: absolute;
+   width: 20vw;
    height: 100%;
-   border-radius: 25px;
-   gap: 10px;
-   transition: 1s ease-out;
-   
-   &:hover {
-      background-color: #fa949d;
+   box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+   flex-direction: column;
+   // overflow: scroll;
+
+   & .message_list {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+
+      & .profile_container {
+         position: relative;
+         min-width: 3.5vw;
+
+         & .profile {
+            margin: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            width: 100%;
+            padding-bottom: 100%;
+
+            // background: url('https://i.ibb.co/rxnRsbB/project-elmo.jpg') no-repeat center / cover;
+
+            & .notread {
+               position: absolute;
+               width: 30%;
+               height: 30%;
+               border-radius: 50%;
+               background: #3326AE;
+               top: 0;
+               left: 0;
+               border: 4px solid #f8f9ff;
+            }
+         }
+
+      }
+
+      & .title_container {
+         display: flex;
+         flex-direction: column;
+         min-width: 5vw;
+         font-family: 'Noto Sans KR';
+         padding: 15px 0 0 20px;
+         gap: 1vh 0;
+
+         & .name {
+            font-size: 0.8vw;
+            font-weight: 500;
+            color: #808080;
+         }
+
+         & .title {
+            font-size: 1vw;
+            font-weight: 900;
+         }
+
+         & .message {
+            font-size: 0.8vw;
+            font-weight: 400;
+            color: #808080;
+         }
+
+         & .location {
+            font-size: 0.7vw;
+            font-weight: 400;
+            color: #808080;
+         }
+      }
+
+      & .time_container {
+         position: relative;
+         flex-grow: 1;
+         min-width: 2vw;
+
+         & .time {
+            top: 0.5vh;
+            right: 0.5vw;
+            position: absolute;
+            font-family: 'Noto Sans KR';
+            color: #808080;
+            font-size: 1em;
+            white-space:nowrap;
+         }
+
+         & .pin {
+            width: 2.5vw;
+            height: 2.5vh;
+            bottom: 1vh;
+            right: 2vw;
+            position: absolute;
+            color: #808080;
+         }
+
+         & .clip {
+            width: 2.5vw;
+            height: 2.5vh;
+            bottom: 1vh;
+            right: 0vw;
+            position: absolute;
+            color: #808080;
+         }
+      }
    }
+}
 
-   & span {
-      font-family: 'Noto Sans KR';
-      font-size: 1.3em;
-      font-weight: 500;
-      color: #fff;
-   }
- }
 
- .item {
-   color: white;
-   width: 25%;
-   height: 25%;
-   margin: 0 0 20px 0;
- }
-
- .front_button {
-   width: 50%;
-   height: 50px;
-   border: none;
-   font-size: 1.5rem;
+.contact_container {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   left: 20vw;
+   width: 55vw;
+   height: 100%;
+   gap: 3vh;
    font-family: 'Noto Sans KR';
-   font-weight: 400;
-   letter-spacing: -2px;
-   background-color: #fa949d;
-   color: white;
-   border-radius: 10px;
-   box-shadow: inset 0 0 0 0 #3326AE;
-   transition: ease-out 0.3s;
 
-   &:hover {
-      box-shadow: inset calc(44vw/2) 0 0 0 #3326AE;
-      cursor: pointer;
+   & .contact {
+      margin: 3vh 0 0 4vw;
+
+      & p {
+         font-family: 'Black Han Sans';
+         font-size: 2vw;
+         color:#3326AE;
+      }
    }
- }
 
-
-.box_origin {
-   transform: rotateY(0deg);
-   transition: 1s;
-}
-
-.box_animation {
-   transform: rotateY(180deg);
-   transition: 1s;
-} 
-
-.back_container {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   height: 100%;
-   align-items: center;
-   background-color: #f8f9ff;
-   position: absolute;
-   border-radius: 25px;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-   transform: rotateY(180deg);
-   backface-visibility: hidden;
-
-   transform-style: preserve-3d;
-
-   & p {
-      font-family:'Noto Sans KR';
-      font-weight: 900;
-      font-size: 3em;
-      color: #3326AE;
-      letter-spacing: -3px;
-      font-weight: 800;
-      margin: 2vh 0 2vh 0;
    
+
+   & .contact_profile_container {
+      position: relative;
+      display: flex;
+      height: 13%;
+      gap: 2vw;
+
+      & .contact_profile {
+            margin: 1.5vh 0 1vh 4vw;
+            height: 10vh;
+            width: 10vh;
+            border-radius: 50%;
+            background: url('https://image.newdaily.co.kr/site/data/img/2010/08/17/2010081700051_0.jpg') no-repeat top / cover;
+      }
+
+      & .contact_profile_name {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 20px;
+
+         // & p {
+         //    font-family: 'Noto Sans KR';
+         //    color: #fff;
+         //    font-size: 1.2em;
+         //    font-weight: 500;
+         // }
+      }
    }
-}
 
-.back_child_container {
-   width: 90%;
-   max-height: 90%;
-   background-color: #f8f9ff;
-   border-radius: 25px;
-   padding: 20px;
-}
-
-.form {
-   width: 100%;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   & .contact_title_container {
+      & p {
+         color: #fff;
+         font-size: 1.2em;
+         font-weight: 500;
+      }
+   }
 }
 
 .input {
-   font-family: 'Noto Sans KR';
-   background: #e6e6e6;
    font-size: 15px;
    line-height: 1.5;
-   color: #666;
-   border: none;
-   border-radius: 10px;
-   padding: 0 30px;
+   outline: 0;
+   padding: 0 10px;
    height: 50px;
-   width: 60%;
-   touch-action: manipulation;
-   margin: 0 0 20px 0;
-   outline: none;
-
+   border-width: 0 0 2px;
    &:focus {
       border: 2px solid #fa949d;
       box-shadow: 0 0 3px #fa949d;
    }
 }
 
+.input:not(:placeholder-shown) {
+   border-color: #fff;
+ }
 
-.textarea {
-   font-family: 'Noto Sans KR';
-   background: #e6e6e6;
-   font-size: 15px;
+.input:placeholder-shown {
+   border-color: blue;
+ }
+
+.now {
+   margin: 0 0 0 4vw;
+   color: #808080;
+}
+
+.contact_title_container{
+.input_title {
+   margin: 0 0 0 4vw;
+   font-weight: 500;
+   font-size: 20px;
    line-height: 1.5;
-   color: #666;
-   border: none;
-   border-radius: 10px;
-   padding: 10px 30px;
-   height: 200px;
+   outline: 0;
+   padding: 0 10px;
+   height: 50px;
    width: 60%;
-   touch-action: manipulation;
-   margin: 0 0 20px 0;
-   resize: vertical;
-
-   &::placeholder {
-      font-family: 'Noto Sans KR';
+   border-width: 0 0 2px;
+   &:focus {
+      border: 2px solid #fa949d;
+      box-shadow: 0 0 3px #fa949d;
    }
+}
+}
+
+.input_title:not(:placeholder-shown) {
+   border-color: #fff;
+ }
+
+.input_title:placeholder-shown {
+   border-color: blue;
+ }
+
+.textarea_container{
+   height: auto;
+   & .textarea {
+      font-family: 'Noto Sans KR';
+      font-size: 15px;
+      line-height: 1.5;
+      outline: 0;
+      padding: 0 10px;
+      background-color: #EBECF0;
+      border-width: 0 0 2px;
+      height: 35vh;
+      width: 60%;
+      margin: 0 0 0 4vw;
+      resize: none;
+      min-height: 70%;
+      
+   }
+
+   & .textarea:not(:placeholder-shown) {
+      border-color: #fff;
+    }
+
+    & .textarea:placeholder-shown {
+      border-color: blue;
+    }
+   
 }
 
 .button {
@@ -239,152 +288,16 @@
    height: 50px;
    border-radius: 10px;
    border: none;
-   background: #fa949d;
+   background: #3326AE;
    font-family: 'Noto Sans KR';
    font-size: 1.3em;
-   margin: 0 0 20px 0;
+   margin: 0 0 0 4vw;
    color: #fff;
+   transition: ease-out 0.3s;
+
+   &:hover {
+      box-shadow: inset calc(44vw) 0 0 0 #fa949d;
+      cursor: pointer;
+   }
 }
 
- .ingb_container {
-   margin-left: auto;
-   position: relative;
-   display: flex;
-   width: 30vw;
-   height: 100vh;
-  
-   perspective: 1500px;
-   background: rgba(0, 78, 162, 0.1);
-   
-
-   &:hover .bingle_forward{
-      transform-origin: 40% 70%;
-      animation: bingle_forward 10s linear infinite;
-   }
-
-   &:hover .bingle_backward {
-      transform-origin: 40% 70%;
-      animation: bingle_backward 10s linear infinite;
-   }
- }
-
- @keyframes bingle {
-   0% {
-      transform: rotateY(-20);
-   }
- }
-
- .map_container {
-   position: relative;
-   top: 0;
-   min-width: 100%;
-   height: 60%;
-   background: url('https://i.ibb.co/SPbHkRH/contact-map-1.jpg') no-repeat center / cover;
-
-   &::before {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      // border-radius: 50%;
-      border: 4px solid #26ae31;
-      bottom: 50%;
-      left: 50%;
-      z-index: 100;
-      transform-origin: center;
-   }
-
-   &::after {
-      content: '';
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      // border-radius: 50%;
-      border: 4px dashed #26ae31;
-      bottom: 50%;
-      left: 50%;
-      z-index: 100;
-      transform-origin: center;
-   }
- }
-
-
- .ingb {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: url('https://i.ibb.co/N7pjVDk/ingb.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center bottom;
-    z-index: 100;
-   //  transform: translateZ(30px);
- }
-
- .ingb_body {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background: url('https://i.ibb.co/GxD73m5/body.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center bottom;
- }
-
- .ingb_hand {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   height: 50%;
-   background: url('https://i.ibb.co/FWLy30z/hand.png');
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: center bottom;
-   // transform: translateZ(100px);
-}
-
-
-// .bingle_bingle {
-//    // transform: rotateZ(360deg);
-//    transform-origin: center;
-//    animation: bingle_circle 3s linear infinite;
-// }
-
-// .bingle_bingle_backward {
-//    // transform: rotateZ(360deg);
-//    transform-origin: center;
-//    animation: bingle_circle 3s linear infinite;
-// }
-
-
-@keyframes bingle_forward {
-   from {
-      transform: rotateZ(0deg);
-   }
-   to {
-      transform: rotateZ(-360deg);
-   }
-   
-}
-
-
-@keyframes bingle_backward {
-   from {
-      transform: rotateZ(-360deg);
-   }
-   to {
-      transform: rotateZ(0deg);
-   }
-   
-}
-
-
-
- 
-//  @keyframes AnimateBG { 
-//    0%{background-position:0% 50%}
-//    50%{background-position:100% 50%}
-//    100%{background-position:0% 50%}
-//  }
