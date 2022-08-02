@@ -22,7 +22,7 @@
 
 .main_container {
    display: flex;
-   width: 65vw;
+   width: 60vw;
    height: 90vh;
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
    position: relative;
@@ -152,45 +152,130 @@
    height: 100%;
    gap: 3vh;
    font-family: 'Noto Sans KR';
+   
 
    & .contact {
       margin: 3vh 0 0 4vw;
+      width: 36vw;
+      position: relative;
+      
+      
 
       & p {
          font-family: 'Black Han Sans';
          font-size: 2vw;
          color:#3326AE;
       }
-   }
 
-   
+      &::after {
+         position: absolute;
+         content: '';
+         // box-shadow: 1px 1px 3px #fa949d;
+         border: 0.01px solid #f8abb2;
+         width: 90%; 
+         transform: scaleY(0.3   );
+      }
+
+   }
 
    & .contact_profile_container {
       position: relative;
       display: flex;
       height: 13%;
-      gap: 2vw;
+      gap: 1vw;
+      width: 40vw;
 
-      & .contact_profile {
-            margin: 1.5vh 0 1vh 4vw;
+      & .contact_profile1 {
+            margin: 1vh 0 0 4.25vw;
             height: 10vh;
             width: 10vh;
             border-radius: 50%;
-            background: url('https://image.newdaily.co.kr/site/data/img/2010/08/17/2010081700051_0.jpg') no-repeat top / cover;
+            background: url('https://cdn-icons-png.flaticon.com/512/3884/3884857.png') no-repeat center / cover;
+            animation: p1FadeInOut 15s ease-in-out infinite;
+            
+      }
+
+      & .contact_profile2 {
+         position: absolute;
+         margin: 1vh 0 0 4.25vw;
+         height: 10vh;
+         width: 10vh;
+         border-radius: 50%;
+         background: url('https://cdn-icons-png.flaticon.com/512/3884/3884851.png') no-repeat center / cover;
+         animation: p2FadeInOut 15s ease-in-out infinite;
+   }
+
+      & .contact_border {
+         position: absolute;
+         margin: 0 0 0 3.75vw;
+         height: 12vh;
+         width: 12vh;
+         border-radius: 50%;
+         border: 5px solid transparent;
+         background: linear-gradient(45deg,#fa949d,#ffffb1) border-box; /*3*/
+
+         mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+         -webkit-mask-composite: xor;
+         mask-composite: exclude;
       }
 
       & .contact_profile_name {
          display: flex;
          flex-direction: column;
          justify-content: center;
-         gap: 20px;
 
-         // & p {
-         //    font-family: 'Noto Sans KR';
-         //    color: #fff;
-         //    font-size: 1.2em;
-         //    font-weight: 500;
-         // }
+         & .input {
+            font-family: 'Noto Sans KR';
+            font-size: 15px;
+            line-height: 1.5;
+            outline: 0;
+            padding: 0 10px;
+            height: 50px;
+            border-width: 0 0 2px;
+            &:focus {
+               border: 2px solid #fa949d;
+               box-shadow: 0 0 3px #fa949d;
+            }
+            &:not(:placeholder-shown) {
+               border-color: #fff;
+             }
+            &:placeholder-shown {
+               border-color: blue;
+             }
+            &::placeholder{
+               font-size: 15px;
+               font-weight: 400;
+            }
+
+         }
+
+         & .name {
+            font-size: 18px;
+            font-weight: 700;
+         }
+
+         & .email {
+            font-size: 15px;
+            font-weight: 400;
+            color: #808080;
+         }
+
+      }
+
+      & .star {
+         position: absolute;
+         width: 2.5vw;
+         height: 2.5vh;
+         left: 80%;
+         color: #ffd400;
+      }
+
+      & .trashcan {
+         position: absolute;
+         width: 2.5vw;
+         height: 2.5vh;
+         left: 85%;
+         color: #808080;
       }
    }
 
@@ -203,26 +288,43 @@
    }
 }
 
-.input {
-   font-size: 15px;
-   line-height: 1.5;
-   outline: 0;
-   padding: 0 10px;
-   height: 50px;
-   border-width: 0 0 2px;
-   &:focus {
-      border: 2px solid #fa949d;
-      box-shadow: 0 0 3px #fa949d;
+@keyframes p1FadeInOut {
+0% {
+opacity:0;
+ }
+ 10% {
+opacity: 1;
+}
+ 40% {
+ opacity:1;
+ }
+ 50% {
+ opacity:0;
+ }
+ 100% {
+ opacity:0;
+ }
+}
+
+@keyframes p2FadeInOut {
+   0% {
+   opacity:0;
+    }
+   50% {
+    opacity:0;
+    }
+   60% {
+    opacity:1;
+    }
+    90% {
+    opacity:1;
+   }
+   100% {
+   opacity: 0;
    }
 }
 
-.input:not(:placeholder-shown) {
-   border-color: #fff;
- }
 
-.input:placeholder-shown {
-   border-color: blue;
- }
 
 .now {
    margin: 0 0 0 4vw;

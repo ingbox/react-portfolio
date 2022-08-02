@@ -7,7 +7,8 @@ import Image from "next/image";
 
 import { BsPinAngleFill } from 'react-icons/bs';
 import { FiPaperclip } from 'react-icons/fi';
-import { VolumeLow } from 'react-ionicons';
+import { AiFillStar } from 'react-icons/ai';
+import { BiTrash } from 'react-icons/bi';
 
 export default function Contact() {
 
@@ -152,11 +153,15 @@ export default function Contact() {
               <div className={styles.contact}><p>Contact</p></div>
               <div className={styles.contact_profile_container}>
           
-              <div className={styles.contact_profile}></div>
+              <div className={styles.contact_profile1}/>
+              <div className={styles.contact_profile2}/>
+              <div className={styles.contact_border}/>
               <div className={styles.contact_profile_name}>
-                <input className={styles.input} type="text" placeholder={"Name"} name= "user_name"/>
-                <input className={styles.input} type="text" placeholder={"Email"} name= "user_email"/>
+                <input className={`${styles.input} ${styles.name}`} type="text" placeholder={"Name"} name= "user_name"/>
+                <input className={`${styles.input} ${styles.email}`} type="text" placeholder={"Email"} name= "user_email"/>
               </div>
+                <AiFillStar className = {styles.star}/>
+                <BiTrash className = {styles.trashcan}/>
               </div>
               <div>
                 <p className={styles.now}>Today, {currentDate}</p>
