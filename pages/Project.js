@@ -123,7 +123,7 @@ export default function Project() {
 
 
             <div className={styles.inline_container} onClick = { () => toggleModal(4)}>
-            <div className={styles.project} style = {{background : "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center / cover"}}>
+            <div className={styles.project} style = {{background : "url('https://i.ibb.co/jGL45gP/ingb-design.jpg') no-repeat center / cover"}}>
                 
                 </div>
                 <div className={styles.desc}>

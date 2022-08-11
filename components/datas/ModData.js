@@ -9,7 +9,7 @@ const data = [
 {
     image: "url('https://i.ibb.co/276WCsK/project2.jpg') no-repeat center",
     title: "[졸업 작품] 언어장애인을 위한 스마트스피커 연동 앱",
-    text: "앱의 사용모드는 사용자의 학습된 음성을 예측할 때 사용되고, 학습모드는 음성 모델 학습 시에 사용된다. 모델은 ResNet50을 사용하였고, 학습되는 음성 데이터는 스펙트로그램 변환, 잡음 제거, Augment의 전처리 과정을 거쳐 학습된다.", 
+    text: "앱의 사용모드는 사용자의 학습된 음성을 예측할 때 사용되고, 학습모드는 음성 모델 학습 시에 사용됩니다. 모델은 ResNet50을 사용하였고, 학습되는 음성 데이터는 스펙트로그램 변환, 잡음 제거, Augment의 전처리 과정을 거쳐 학습됩니다.", 
     url: "www.naver.com",
     youtube : "fWw1atfMldk"
 },
@@ -26,10 +26,11 @@ const data = [
     url: "www.naver.com"
 },
 {
-    image: "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center",
-    title: "파이썬 한걸음",
-    text: "파이썬을 공부하였습니다", 
-    url: "www.naver.com"
+    image: "url('https://i.ibb.co/jGL45gP/ingb-design.jpg') no-repeat center",
+    title: "[디자인]내가 만든 디자인 온라인 전시",
+    text: "JavaScript, JQuery, P5js, Canvas, css 등 다양한 Frontend 기술을 활용하여 디자인을 연습하는 연습장입니다. 배포는 Github Pages로 되어있고 재밌는 것이 많이 업로드되어있으니, 때껄룩", 
+    url: "www.naver.com",
+    youtube: "69oktaUaJSE"
 },
 {
     image: "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center",
