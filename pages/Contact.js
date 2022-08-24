@@ -3,7 +3,6 @@ import styles from 'styles/Contact.module.scss'
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import moment from "moment";
-import Image from "next/image";
 
 import { BsPinAngleFill } from 'react-icons/bs';
 import { FiPaperclip } from 'react-icons/fi';

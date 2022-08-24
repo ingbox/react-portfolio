@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState } from 'react';
 import YouTube, { YouTubeProps } from 'react-youtube';
 import ModalData from 'components/datas/ModData';
+import Link from 'next/link';
+import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 // error fixed
 export default function Project() {
@@ -151,6 +153,9 @@ export default function Project() {
                 </div>
                 <div className = {styles.modal_title}>
                        {ModalData[modex].title}
+                            <a href= {ModalData[modex].url} target="_blank" rel="noopener noreferrer">
+                            <BsFillArrowRightSquareFill className = {styles.icons}></BsFillArrowRightSquareFill>
+                            </a>
                 </div>
 
                 <div className = {styles.modal_text}>
