@@ -15,15 +15,15 @@ const data = [
 },
 {
     image: "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center",
-    title: "파이썬 한걸음",
-    text: "리엑트를 공부하였습니다", 
-    url: "#"
+    title: "[리엑트 프로젝트] 나무읽기: 나무위키 읽어주는 사이트",
+    text: "React를 사용하여 나무위키를 읽어주는 사이트를 제작해보았습니다. 완벽히 구현된 상태는 아니며, 인덱싱된 검색어에서 텍스트를 추출 후 정제 후 오디오로 변환까지 구현하였으며 플레이리스트에 담는 것 까지 완료하였습니다", 
+    url: "https://github.com/ingbox/react_audio"
 },
 {
     image: "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center",
-    title: "파이썬 한걸음",
-    text: "파이썬을 공부하였습니다", 
-    url: "www.naver.com"
+    title: "[블로그] Minimal Mistake를 이용하여 블로그 만들기",
+    text: "Minimal Mistake 템플릿으로 만든 MarkDown언어 기반으로 작성할 수 있는 Github 블로그입니다. 제가 IT 이슈나 공부한 것들을 정리하여 업로드하는 블로그입니다. 포토폴리오 제작을 위해 잠시 휴식 상태입니다. 취업 후에 활발히 사용할 예정...", 
+    url: "https://ingbox.github.io/"
 },
 {
     image: "url('https://i.ibb.co/jGL45gP/ingb-design.jpg') no-repeat center",
@@ -34,9 +34,9 @@ const data = [
 },
 {
     image: "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center",
-    title: "파이썬 한걸음",
-    text: "파이썬을 공부하였습니다", 
-    url: "www.naver.com"
+    title: "[리엑트 프로젝트] 포트폴리오 사이트 제작",
+    text: "Frontend직을 지원하기 위해서는 포트폴리오 사이트가 필요하다고 생각되여 제작하게 되었습니다. 반응형 웹 기반으로 제작하여 웹, 모바일, 태블릿에서 원활하게 돌아가게 하는 것이 목표입니다.", 
+    url: "https://react-portfolio-ashen-six.vercel.app/"
 }
 ];
 

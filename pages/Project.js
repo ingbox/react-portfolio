@@ -75,7 +75,7 @@ export default function Project() {
             <div className={`${styles.project_icon} ${styles.icon_1}`}>
                 <div className={styles.icon_container}>
                         <AddOutline className={styles.icon} color={'#ffffff'}/>
-                    </div>
+                </div>
                     <div className={styles.icon_image}>
                             <Image className= {styles.image} src='https://i.ibb.co/qnL1fGT/project-item1.jpg' layout='fill' objectFit='contain'/>
                     </div>
@@ -106,7 +106,33 @@ export default function Project() {
             <div className={styles.inline_container}  onClick = { () => toggleModal(2)}>
 
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/25H7kK1/project3.jpg') no-repeat center / contain"}}>
-                
+                    <div className={`${styles.project_icon} ${styles.icon_1}`}>
+                <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://images.velog.io/images/chez_bono/post/487c1fc1-4d58-4a97-aaaf-e0d1d91c0cb6/React.js_logo-512.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+
+                <div className={`${styles.project_icon} ${styles.icon_2_1}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://www.svgrepo.com/show/354039/mariadb.svg' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+                <div className={`${styles.project_icon} ${styles.icon_3}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://icons-for-free.com/iconfiles/png/512/javascript+js+node+icon-1320184811019773066.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+
+
             </div>
             <div className={styles.desc}>
                 [리엑트 프로젝트] 나무읽기: 나무위키 읽어주는 사이트
@@ -117,6 +143,23 @@ export default function Project() {
             <div className={styles.inline_container} onClick = { () => toggleModal(3)}>
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/cNPxPKM/picture5.jpg') no-repeat center / cover"}}>
                 
+            <div className={`${styles.project_icon} ${styles.icon_1}`} style = {{bottom: "47%"}}>
+                <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://images.velog.io/images/dkdk6638/post/46125d28-2d69-460f-8111-1698cf3274f6/41B3U.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+
+                <div className={`${styles.project_icon} ${styles.icon_2}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/288_Sass-512.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
             </div>
             <div className={styles.desc}>
                 [블로그] Minimal Mistake를 이용하여 블로그 만들기
@@ -126,7 +169,33 @@ export default function Project() {
 
             <div className={styles.inline_container} onClick = { () => toggleModal(4)}>
             <div className={styles.project} style = {{background : "url('https://i.ibb.co/jGL45gP/ingb-design.jpg') no-repeat center / cover"}}>
-                
+            <div className={`${styles.project_icon} ${styles.icon_1}`}>
+                <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://www.shareicon.net/data/512x512/2015/08/28/92043_html_512x512.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+
+                <div className={`${styles.project_icon} ${styles.icon_2_1}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://images.velog.io/images/wishtree/post/810cfa86-2581-4942-9fc0-b72ce211f4a3/-oslcYof.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+                <div className={`${styles.project_icon} ${styles.icon_3}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>    
+
+
                 </div>
                 <div className={styles.desc}>
                 [디자인] 내가 만든 디자인 온라인 전시
@@ -137,6 +206,23 @@ export default function Project() {
                 <div className={styles.inline_container} onClick = { () => toggleModal(5)}>
                 <div className={styles.project} style = {{background : "url('https://i.ibb.co/bgXVnLW/picture6.jpg') no-repeat center / cover"}}>
     
+                <div className={`${styles.project_icon} ${styles.icon_1}`} style = {{bottom: "47%"}}>
+                <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://images.velog.io/images/chez_bono/post/487c1fc1-4d58-4a97-aaaf-e0d1d91c0cb6/React.js_logo-512.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
+
+                <div className={`${styles.project_icon} ${styles.icon_2}`}>
+                    <div className={styles.icon_container}>
+                        <AddOutline className={styles.icon} color={'#ffffff'}/>
+                    </div>
+                    <div className={styles.icon_image}>
+                            <Image className= {styles.image} src='https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png' layout='fill' objectFit='contain'/>
+                    </div>
+                </div>
                 </div>
                 <div className={styles.desc}>
                 [리엑트 프로젝트] 포트폴리오 사이트 제작
