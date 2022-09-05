@@ -5,8 +5,6 @@ import { MdHome } from 'react-icons/md';
 import {useState} from 'react';
 
 function HeaderHome() {
-
-
     return (
     <div>
         <div className={styles.header_layout}/>

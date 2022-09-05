@@ -56,7 +56,7 @@ const data = [
 ,
 [{
     part: 'Python',
-    per: 50,
+    per: 20,
     url: "url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/486px-Python_logo_and_wordmark.svg.png') no-repeat center / 10vh"
 },
 

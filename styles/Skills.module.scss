@@ -1,5 +1,11 @@
 @import "./variables";
+@import "./mixins";
 @import "./animation";
+
+
+@include mobile {
+
+}
 
 .parts_container {
     position: relative;
