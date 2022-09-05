@@ -17,27 +17,213 @@
     .project {
         width: 100%;
         height: 100%;
+
+        & .project_icon {
+            display: none;
+        }
     }
+
+    .modal {
+        width: 90vw;
+        height: 60vh;
+
+        & .modal_text {
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size: 1.5vh;
+            color: #fff;
+            line-height: 1.8vh;
+            letter-spacing: -1.5px;
+            width: 100%;
+            padding: 1vh 30px 0 30px;
+        }
+
+        & .modal_title {
+            display: flex;
+            font-family: 'Noto Sans KR';
+            font-weight: 700;
+            font-size: 1.6vh;
+            letter-spacing: -1.5px;
+            color: #fff;
+            width: 100%;
+            height: 10%;
+            padding: 30px 0 0 30px;
+    
+            & a {
+                margin-left: 10px;
+                & .icons{
+                    color: #fff;
+                }
+            }
+    
+        }
+    }
+
 }
 
 @include desktop {
     .cheif_container {
         margin: 0 0 0 11vw;
         width: 89vw;
-        overflow: hidden;
+        overflow: auto;
         gap: 0vw 10vh;
      }
 
 
     .inline_container {
         width: 25vw;
-        height: 38vh;
+        height: 40vh;
     }
 
     .project {
         width: 25vw;
         height: 30vh;
     }
+
+    .project {
+        &_icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 50%;
+            position: absolute;
+            transition: width 550ms ease, height 550ms ease, right 550ms ease, background 550ms ease;
+            overflow: hidden;
+    
+            // 아이콘을 위치
+            & .icon_container {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            & .icon_image {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+    
+                & .image {
+    
+                    position: absolute;
+                    width: 340%;
+                    height: 340%;
+                    object-fit: cover;
+                    opacity: 0;
+                    transition: opacity 550ms ease;
+                }
+            }
+        }
+    
+        & .icon_1 {
+            right: 80%;
+            bottom: 55%;
+        }
+    
+        & .icon_2 {
+            bottom: 25%;
+            right: 15%;
+        }
+    
+        & .icon_2_1 {
+            bottom: 22%;
+            right: 20%;
+        }
+    
+        & .icon_3 {
+            bottom: 40%;
+            right: 50%;
+        }
+    
+        &:hover {
+            & .project_icon {
+                width: 5vw;
+                height: 5vw;
+            }
+    
+            & .icon_1 {
+                right: 70%;
+                transition-delay: 100ms;
+                .icon_image {
+                    .image {
+                        opacity: 1;
+                    }
+                }
+            }
+    
+            & .icon_2 {
+                .icon_image {
+                    .image {
+                        opacity: 1;
+                    }
+                }
+            }
+            & .icon_2_1 {
+                right: 15%;
+                .icon_image {
+                    .image {
+                        opacity: 1;
+                    }
+                }
+            }
+    
+    
+            & .icon_3 {
+                right: 43%;
+                transition-delay: 200ms;
+                .icon_image {
+                    .image {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .modal {
+        width: 50vw;
+        height: 45vw;
+
+        & .modal_text {
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size: 1.2vw;
+            color: #fff;
+            line-height: 1.5vw;
+            letter-spacing: -1.5px;
+            width: 100%;
+            padding: 0px 30px 0 30px;
+        }
+
+        & .modal_title {
+            display: flex;
+            font-family: 'Noto Sans KR';
+            font-weight: 700;
+            font-size: 1.6vw;
+            letter-spacing: -1.5px;
+            color: #fff;
+            width: 100%;
+            height: 10%;
+            padding: 30px 0 0 30px;
+    
+            & a {
+                margin-left: 10px;
+                & .icons{
+                    color: #fff;
+                }
+            }
+    
+        }
+    
+    }
+
+
 }
 
 @include tablet {
@@ -57,10 +243,51 @@
     .project {
         width: 25vw;
         height: 25vh;
+
+        & .project_icon {
+            display: none;
+        }
+    }
+
+    .modal {
+        width: 50vw;
+        height: 45vw;
+
+        & .modal_title {
+            display: flex;
+            font-family: 'Noto Sans KR';
+            font-weight: 700;
+            font-size: 1.6vw;
+            letter-spacing: -1.5px;
+            color: #fff;
+            width: 100%;
+            height: 10%;
+            padding: 30px 0 0 30px;
+    
+            & a {
+                margin-left: 10px;
+                & .icons{
+                    color: #fff;
+                }
+            }
+    
+        }
+
+        & .modal_text {
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size: 1.2vw;
+            color: #fff;
+            line-height: 1.5vw;
+            letter-spacing: -1.5px;
+            width: 100%;
+            padding: 0px 30px 0 30px;
+        }
+
+        
+    
     }
 }
-
-
 
 .background {
     position: absolute;
@@ -106,149 +333,6 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     position: relative;
-
-
-    &_icon {
-        width: 20px;
-        height: 20px;
-        background: rgba(0, 0, 0, 0.75);
-        border-radius: 50%;
-        position: absolute;
-        transition: width 550ms ease, height 550ms ease, right 550ms ease, background 550ms ease;
-		overflow: hidden;
-
-        // 아이콘을 위치
-        & .icon_container {
-            position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-        }
-
-        & .icon_image {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-
-            & .image {
-                
-                position: absolute;
-            
-                width: 340%;
-                height: 340%;
-                object-fit: cover;
-                opacity: 0;
-                
-                transition: opacity 550ms ease;
-            }
-        }
-
-        // &::after {
-		// 	content: "";
-		// 	position: absolute;
-		// 	left: 0;
-		// 	top: 0;
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	background: linear-gradient(
-		// 		to top,
-		// 		rgba(0, 0, 0, 0.30) 0%,
-		// 		rgba(0, 0, 0, 0.10) 50%,
-		// 		transparent 100%
-		// 	);
-		// 	z-index: 1;
-		// 	opacity: 0;
-		// 	transition: opacity 550ms ease;
-		// }
-
-
-    }
-
-    & .icon_1 {
-        right: 80%;
-        bottom: 55%;
-    }
-
-    & .icon_2 {
-        bottom: 25%;
-        right: 15%;
-    }
-
-    & .icon_2_1 {
-        bottom: 22%;
-        right: 20%;
-    }
-
-    & .icon_3 {
-        bottom: 40%;
-        right: 50%;
-    }
-
-    &:hover {
-		& .project_icon {
-            width: 5vw;
-            height: 5vw;
-			// &::after {
-			// 	opacity: 1;
-			// }
-			
-			// & .icon_2 {
-			// 	right: -10%;
-			// }
-
-
-			// .info--text {
-			// 	transition-delay: 550ms;
-			// 	opacity: 1;
-			// 	transform: translateY(0%);
-			// }
-		}
-
-        & .icon_1 {
-            right: 70%;
-            transition-delay: 100ms;
-            .icon_image {
-				.image {
-					opacity: 1;
-				}
-			}
-        }
-
-        & .icon_2 {
-            .icon_image {
-				.image {
-					opacity: 1;
-				}
-			}
-        }
-        & .icon_2_1 {
-            right: 15%;
-            .icon_image {
-				.image {
-					opacity: 1;
-				}
-			}
-        }
-
-
-        & .icon_3 {
-            right: 43%;
-            transition-delay: 200ms;
-            .icon_image {
-				.image {
-					opacity: 1;
-				}
-			}
-        }
-
-	}
-
  }
 
  .modal_container, .overlay {
@@ -273,8 +357,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #0067A3;
-    width: 50vw;
-    height: 45vw;
     overflow: hidden;
     border-radius: 25px;
 
@@ -285,43 +367,12 @@
         overflow: hidden;
     }
 
-    & .modal_title {
-        display: flex;
-        font-family: 'Noto Sans KR';
-        font-weight: 700;
-        font-size: 1.6vw;
-        letter-spacing: -1.5px;
-        color: #fff;
-        width: 100%;
-        height: 10%;
-        padding: 30px 0 0 30px;
-
-        & a {
-            margin-left: 10px;
-            & .icons{
-                color: #fff;
-            }
-        }
-
-    }
-    & .modal_text {
-        font-family: 'Noto Sans KR';
-        font-weight: 500;
-        font-size: 1.2vw;
-        color: #fff;
-        line-height: 1.5em;
-        letter-spacing: -1.5px;
-        width: 100%;
-        height: 10%;
-        padding: 0px 30px 0 30px;
-    }
-
     & .modal_button {
         font-family: 'Noto Sans KR';
         font-weight: 500;
         font-size: 1vw;
         color: #fff;
-        height: 3vw;
+        height: 4.5vh;
         width: 8vw;
         position: absolute;
         left: 30px;
@@ -330,7 +381,6 @@
         border-radius: 10px;
         border: 2px solid #fff;
         cursor: pointer;
-
     }
 
     & .youtube {
