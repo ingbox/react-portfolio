@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styles from 'styles/Header.module.scss';
 import { AiFillProject, AiFillContacts } from 'react-icons/ai';
 import { MdHome } from 'react-icons/md';
-import {useState} from 'react';
 
 function HeaderHome() {
     return (

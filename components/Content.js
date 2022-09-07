@@ -43,7 +43,7 @@ export default function Content() {
             </div>
                     {/* 2열 박스 */}
             <div className = {styles.container}>
-                <p>TIMELINE</p>
+                <p className={styles.timeline_p}>TIMELINE</p>
                 <div ref = {ref} className={styles.timeline_container}>
                     <div className={styles.midline} style = {{height: height}}/>
                     {TimelineData.length > 0 &&

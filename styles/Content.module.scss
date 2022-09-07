@@ -23,6 +23,18 @@
     .timeline_container {
         margin: 0.5vh 1.5vw 3vh 1.5vw;
     }
+
+     // 프로필 사진
+     .profile_container {
+        &::before {
+            width: 70%;
+        }
+
+        &::after {
+            width: 100%;
+        }
+    }
+
 }
 
 @include desktop {
@@ -39,6 +51,7 @@
 
     .container {
         width: 44vw;
+        height: 98vh;
     }
 
     // 타임라인(Timeline)
@@ -71,7 +84,7 @@
 
     // 타임라인(Timeline)
     .timeline_container {
-        margin: 0.5vh 0vw 3vh 3vw;
+        margin: 0.5vh 0 10vh 3vw;
     }
 
     // 프로필 사진
@@ -82,6 +95,10 @@
         &::after {
             width: 27vw;
         }
+    }
+    
+    .hello_container {
+        width: 82.5vw;
     }
 
     .skill_container {
@@ -97,7 +114,6 @@
 
 .container {
     display: flex;
-    height: 98vh;
     flex-direction: column;
 
     & p {
@@ -146,12 +162,27 @@
     box-sizing: border-box;
 }
 
+
+
 // 프로필 사진
 .profile_container {
     position: relative;
     width: 180px;
     height: 237px;
     left: calc(50% - 90px);
+
+    & .QR {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        top: 10%;
+        left: -65%;
+
+        & a {
+            width: 100%;
+            height: 100%;
+        }
+    }
 
     & p:nth-child(2) {
         font-family: 'Noto Sans KR';
@@ -306,9 +337,6 @@
     }
 }
 
-
-
-
 .inline_container {
     position: relative;
     width: 100%;
@@ -316,16 +344,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-
-    // //마지막 자식으로 Content 1개 생성
-    // &::after {
-    //     background-color: #4D54FF;
-    //     content: '';
-    //     position: absolute;
-    //     margin-left: calc(50% - 4px);
-    //     width: 8px;
-    //     // height: calc(100% + 30vh);
-    // }
 }
 
  .midline {
@@ -334,7 +352,6 @@
         top: 0;
         left: calc(50% - 4px);
         width: 8px;
-        // height: 100%;
     }
 
 

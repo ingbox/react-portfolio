@@ -36,14 +36,24 @@ export default function Profile() {
 
 
     return (
+        <>
+           
             <div className={styles.profile_container}>
               <Image src='https://i.ibb.co/njBbxbg/Profile.png' width="180px" height="237px"/>
+            
+        
               <p>임지섭</p>
               <p>@ingb</p>
               <div className={styles.effect_container}>
                   <p data-text={item}>{item}</p>
               </div>
+              <div className={styles.QR}>
+              <a href="https://ingbox.github.io/practice_p5.js/">
+                <Image src='https://i.ibb.co/GdCgQC3/Ingbox.png' width="110px" height="110px"/>
+               </a>
+              </div>
             </div>
+        </>
     )
 }
 
